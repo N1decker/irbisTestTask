@@ -1,7 +1,7 @@
 package com.nidecker.testtask.rest;
 
-import com.nidecker.testtask.entity.Source;
-import com.nidecker.testtask.repository.SourceRepository;
+import com.nidecker.testtask.entity.Topic;
+import com.nidecker.testtask.repository.TopicRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,13 +12,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/api")
 @RequiredArgsConstructor
-public class SourceRestController {
+public class TopicRestController {
 
-    private final SourceRepository sourceRepository;
+    private final TopicRepository topicRepository;
 
-    @GetMapping("/sources")
-    public List<Source> findAll() {
-        return sourceRepository.findAll();
+    @GetMapping("/topics")
+    public List<Topic> findAll() {
+        return topicRepository.findAll();
     }
-
 }

@@ -1,3 +1,3 @@
-INSERT INTO source (source)
+INSERT INTO source (name)
 values ('irbis.plus'),
        ('praktika.irbis.plus');

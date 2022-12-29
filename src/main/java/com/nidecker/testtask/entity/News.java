@@ -12,7 +12,8 @@ import java.util.Objects;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Source_News {
+@Table(name = "news")
+public class News {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,14 +21,15 @@ public class Source_News {
 
     @ManyToOne
     private Source source;
-    private String topic;
+    @ManyToOne
+    private Topic topic;
     private String news;
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
-        Source_News that = (Source_News) o;
+        News that = (News) o;
         return id != null && Objects.equals(id, that.id);
     }
 
