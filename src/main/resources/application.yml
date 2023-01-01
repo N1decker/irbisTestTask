@@ -3,7 +3,7 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
-#    generate-ddl: true
+    generate-ddl: true
     show-sql: true
     properties:
       hibernate:
@@ -14,7 +14,8 @@ spring:
     username: postgres
     password: password
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/postgres
+#    url: jdbc:postgresql://localhost:5432/postgres
+    url: jdbc:postgresql://postgresql:5432/postgres
   liquibase:
     enabled: true
   h2:

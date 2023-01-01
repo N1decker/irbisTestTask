@@ -19,9 +19,9 @@ public class News {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Source source;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Topic topic;
     private String news;
 

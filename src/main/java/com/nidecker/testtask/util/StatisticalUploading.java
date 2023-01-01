@@ -28,12 +28,7 @@ import java.util.stream.Collectors;
 public class StatisticalUploading {
     private final NewsRepository newsRepository;
 
-    public static final Path DIRECTORY_FOR_STATISTICS_UPLOADING = Paths.get(System.getProperty("user.dir") + "\\statistics");
-
-    static {
-        new File(DIRECTORY_FOR_STATISTICS_UPLOADING.toUri()).mkdir();
-    }
-
+    public static final Path DIRECTORY_FOR_STATISTICS_UPLOADING = Paths.get("statistics");
 
     @Scheduled(cron = "${interval-in-cron}")
     public void uploading() {
@@ -49,6 +44,7 @@ public class StatisticalUploading {
             List<String[]> listOfLines = Arrays.stream(statistics).map(s -> s.trim().split(",")).toList();
             writeIntoCsvFile(file, listOfLines);
         }
+        log.info("statistics uploaded (" + LocalDateTime.now().truncatedTo(TimeUnit.MINUTES.toChronoUnit()) + ")");
     }
 
     private Map<String, Map<String, Long>> parseNews(@NotNull List<News> news) {

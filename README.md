@@ -1,0 +1,1 @@
+docker cp springboot-postgresql:statistics/ .
