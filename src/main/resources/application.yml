@@ -3,11 +3,13 @@ spring:
     hibernate:
       ddl-auto: validate
     open-in-view: false
-    generate-ddl: true
+#    generate-ddl: true
     show-sql: true
     properties:
       hibernate:
         format_sql: true
+        jdbc:
+          batch_size: 100
   datasource:
     username: postgres
     password: password
@@ -18,4 +20,13 @@ spring:
   h2:
     console:
       enabled: true
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: 1bb3792882c6e8d6e5c9
+            client-secret: 913e5c63bf48a227cadbb1d74945392f11de1c66
 interval-in-cron: "0 * * * * *"
+default-page-number: 0
+default-page-size: 5
