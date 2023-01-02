@@ -21,8 +21,11 @@ public class News {
 
     @ManyToOne(fetch = FetchType.EAGER)
     private Source source;
+
     @ManyToOne(fetch = FetchType.EAGER)
     private Topic topic;
+
+    @Column(nullable = false)
     private String news;
 
     @Override
